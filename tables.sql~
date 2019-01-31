@@ -1,0 +1,21 @@
+CREATE TABLE users (
+ -- 利用者id
+ id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+ -- 利用者名義
+ name varchar(64) NOT NULL
+
+ -- 利用者パスワード
+ pass INTEGER NOT NULL
+);
+
+CREATE TABLE tweets (
+ -- id
+ user_id INTEGER REFERENCES users(id) NOT NULL,
+
+ -- tweet
+ tweet varchar(200) NOT NULL,
+
+ -- time
+ time TIMESTAMP
+);
